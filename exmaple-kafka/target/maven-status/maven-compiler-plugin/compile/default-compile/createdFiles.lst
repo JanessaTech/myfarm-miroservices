@@ -1,0 +1,4 @@
+com\myfarm\kafkaSample\KafkaSender.class
+com\myfarm\kafkaSample\KafkaReceiver.class
+com\myfarm\kafkaSample\KafkaSampleApplication.class
+com\myfarm\kafkaSample\Messages.class

@@ -1,0 +1,42 @@
+server:
+  port: 9201
+service-url:
+  lb-service: http://127.0.0.1:9050/ribbon/examples/msg
+spring:
+  application:
+      name: gateway-example
+  cloud:
+    gateway:
+      routes:
+        - id: example_module #uri: ${service-url.lb-service}/examples/msg
+          uri: lb://example
+          predicates:
+            - Path=/examples/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/inCaseOfFailureUseThis
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 2
+                key-resolver: "#{@ipKeyResolver}"
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能
+          lower-case-service-id: true #使用小写服务名，默认是大写
+  redis:
+    host: 192.168.0.200
+    port: 6379
+    password:
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka

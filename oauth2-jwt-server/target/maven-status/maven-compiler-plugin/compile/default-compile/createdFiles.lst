@@ -1,0 +1,8 @@
+com\myfarm\auth2\ResourceServerConfig.class
+com\myfarm\auth2\UserService.class
+com\myfarm\auth2\SecurityConfig.class
+com\myfarm\auth2\JwtTokenStoreConfig.class
+com\myfarm\auth2\RedisTokenStoreConfig.class
+com\myfarm\auth2\Oauth2ServerApplication.class
+com\myfarm\auth2\Auth2TestController.class
+com\myfarm\auth2\AuthorizationServerConfig.class

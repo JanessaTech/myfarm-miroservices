@@ -1,0 +1,18 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: hystrix-example
+#eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka
+  instance:
+    preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'

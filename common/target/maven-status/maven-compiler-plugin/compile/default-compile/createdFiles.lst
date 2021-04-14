@@ -1,0 +1,10 @@
+com\farm\common\FarmResponse.class
+com\farm\common\validation\MultipleUUIDValidator.class
+com\farm\common\validation\EnumValidator.class
+com\farm\common\validation\UUIDValueValidator.class
+com\farm\common\Constants$Order.class
+com\farm\common\exception\GlobalExceptionHandler.class
+com\farm\common\validation\UUIDValidator.class
+com\farm\common\validation\MultipleUUIDValueValidator.class
+com\farm\common\Constants.class
+com\farm\common\validation\EnumValueValidator.class

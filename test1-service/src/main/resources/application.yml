@@ -1,0 +1,15 @@
+server:
+  port: 9410
+spring:
+  application:
+    name: test1-service
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka
